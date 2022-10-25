@@ -7,14 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "prettier:check": "prettier --config .prettierrc --check \"src/**/*.{ts,scss,html}\"",
-    "pre-commit": "lint-staged",
+    "prettier:check": "prettier --config .prettierrc --check \"src/**/*.{ts,scss}\"",
+    "pre-commit": "lint-staged -r",
     "lint": "ng lint"
-  },
-  "lint-staged": {
-    "src/**/*.{ts,scss,html}": [
-      "npm run lint"
-    ]
   },
   "private": true,
   "dependencies": {
