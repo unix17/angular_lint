@@ -8,16 +8,12 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prettier:check": "prettier --config .prettierrc --check \"src/**/*.{ts,scss,html}\"",
+    "pre-commit": "lint-staged",
     "lint": "ng lint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "src/**/*.{ts,scss,html}": [
-      "npm run prettier:check && npm run lint"
+      "npm run lint"
     ]
   },
   "private": true,
