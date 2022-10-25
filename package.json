@@ -10,6 +10,16 @@
     "prettier:check": "prettier --config .prettierrc --check \"src/**/*.{ts,scss,html}\"",
     "lint": "ng lint"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick — staged && ng lint"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,scss,html}": [
+      "npm run prettier:check && npm run lint"
+    ]
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.2.0",
@@ -51,15 +61,5 @@
     "prettier": "^2.7.1",
     "tslint-angular": "^3.0.3",
     "typescript": "~4.5.2"
-  },
-  "lint-staged": {
-    "src/**/*.{ts,scss,html}": [
-      "npm run prettier:check && npm run lint"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick — staged && ng lint"
-    }
   }
 }
